@@ -1,2 +1,6 @@
-# moja_denarnica
-Moja denarnica: Projektna naloga za Uvod v programiranje
+# Moja denarnica
+
+## Projektna naloga za Uvod v programiranje.
+
+To je program za spramljanje stanja svoje denarnice.
+
