@@ -28,7 +28,7 @@ class Denarnica:
             self.dodaj_v_slovar(ime_izdelka, cena, kolicina)
             with open('denarnica.txt', 'a') as dat:
                 print(ime_izdelka, '-' +  str(kolicina * cena) + '€', x, sep = ', ', file = dat)
-            return 'Izdelek ste uspesno kupili.'
+            return 'Izdelek ste uspešno kupili.'
 
     def placaj_poloznico(self, namen_poloznice, znesek):
         if znesek > self.stanje:
@@ -49,10 +49,10 @@ class Denarnica:
         return 'Vaše stanje se je povišalo na {}€'.format(self.stanje)
 
     def poraba_na_izdelek(self, ime_izdelka):
-        return ime_izdelka, self.slovar[ime_izdelka][0]
+        return 'Za ta izdelek ste porabili {} €.'.format(self.slovar[ime_izdelka][0])
 
     def kolicina_na_izdelek(self, ime_izdelka):
-        return ime_izdelka, self.slovar[ime_izdelka][1]
+        return 'Kupili ste {} izdelkov.'. format(self.slovar[ime_izdelka][1])
 
 def izpis_prihodkov_in_dohodkov():
     izpis = ''
