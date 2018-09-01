@@ -116,7 +116,7 @@ class Prihodki:
         self.label_1 = tk.Label(okno, text = 'Vpiši opis prihodka:').grid(row = 0, column = 0)
         self.vhod_1 = tk.Entry(okno, width = 20, textvariable = self.opis).grid(row = 0, column = 1)
         
-        self.Label_2 = tk.Label(okno, text = 'Vpisši velikost prihodka:').grid(row = 1, column = 0)
+        self.Label_2 = tk.Label(okno, text = 'Vpiši velikost prihodka:').grid(row = 1, column = 0)
         self.vhod_2 = tk.Entry(okno, width = 20, textvariable = self.velikost).grid(row = 1, column = 1)
 
         self.gumb_prihodek = tk.Button(okno, text = 'SHRANI PRIHODEK', command = self.shrani_prihodek).grid(row = 2, column = 1)
