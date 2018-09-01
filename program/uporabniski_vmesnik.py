@@ -64,7 +64,7 @@ class Kupujem:
         self.label_2 = tk.Label(okno, text = 'Vpiši ceno izdelka:').grid(row = 1, column = 0)
         self.vhod_2 = tk.Entry(okno, width = 20, textvariable = self.cena).grid(row = 1, column = 1)
         
-        self.label_3 = tk.Label(okno, text = 'Vpiši kolicino izdelkov:').grid(row = 2, column = 0)
+        self.label_3 = tk.Label(okno, text = 'Vpiši količino izdelkov:').grid(row = 2, column = 0)
         self.vhod_3 = tk.Entry(okno, width = 20, textvariable = self.kolicina).grid(row = 2, column = 1)
     
         self.gumb_kupi = tk.Button(okno, text = 'KUPI', command = self.kupi, width = 10).grid(row = 3, column = 1)
