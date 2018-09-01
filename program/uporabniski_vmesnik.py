@@ -1,4 +1,3 @@
-
 from moja_denarnica import *
 
 import tkinter as tk
