@@ -24,7 +24,7 @@ class Denarnica:
             return 'Žal nimate dovolj denarja za ta nakup!'
         else:
             self.stanje -= kolicina * cena
-            x = datetime.datetime.now()
+            x = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
             self.dodaj_v_slovar(ime_izdelka, cena, kolicina)
             with open('denarnica.txt', 'a') as dat:
                 print(ime_izdelka, '-' +  str(kolicina * cena) + '€', x, sep = ', ', file = dat)
@@ -35,7 +35,7 @@ class Denarnica:
             return 'Ups, te položnice pa ne morete plačati!'
         else:
             self.stanje -= znesek
-            x = datetime.datetime.now()
+            x = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
             self.dodaj_v_slovar(namen_poloznice, znesek, 1)
             with open('denarnica.txt', 'a') as dat:
                 print(namen_poloznice, '-' +  str(znesek) + '€', x, sep = ', ', file = dat)
@@ -43,7 +43,7 @@ class Denarnica:
         
     def prihodek(self, opis_prihodka, velikost_prihodka):
         self.stanje += velikost_prihodka
-        x = datetime.datetime.now()
+        x = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
         with open('denarnica.txt', 'a') as dat:
             print(opis_prihodka,'+' + str(velikost_prihodka) + '€', x, sep = ', ', file = dat)
         return 'Vaše stanje se je povišalo na {}€'.format(self.stanje)
