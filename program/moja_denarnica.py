@@ -49,10 +49,16 @@ class Denarnica:
         return 'Vaše stanje se je povišalo na {}€'.format(self.stanje)
 
     def poraba_na_izdelek(self, ime_izdelka):
-        return 'Za ta izdelek ste porabili {} €.'.format(self.slovar[ime_izdelka][0])
+        if self.slovar.get(ime_izdelka) == None:
+            return 'Tega izdelka še niste kupili.'
+        else:
+            return 'Za ta izdelek ste porabili {} €.'.format(self.slovar[ime_izdelka][0])
 
     def kolicina_na_izdelek(self, ime_izdelka):
-        return 'Kupili ste {} izdelkov.'. format(self.slovar[ime_izdelka][1])
+        if self.slovar.get(ime_izdelka) == None:
+            return 'Tega izdelka še niste kupili.'
+        else:
+            return 'Kupili ste {} izdelkov.'. format(self.slovar[ime_izdelka][1])
 
 def izpis_prihodkov_in_dohodkov():
     izpis = ''
