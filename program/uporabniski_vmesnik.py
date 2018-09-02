@@ -76,7 +76,7 @@ class Kupujem:
         self.okno.destroy()
 
     def kupi(self):
-        self.label_4 = tk.Label(self.okno, text = denarnica.kupi_izdelek(self.izdelek.get(), self.cena.get(), self.kolicina.get())).grid(row = 4, column = 1)
+        self.label_4 = tk.Label(self.okno, text = denarnica.kupi_izdelek(self.izdelek.get(), self.cena.get(), self.kolicina.get()), width = 50).grid(row = 4, column = 1)
         shrani_denarnico(denarnica)
         
 class Poloznica:
@@ -101,7 +101,7 @@ class Poloznica:
         self.okno.destroy()
                        
     def placaj(self):
-        self.label_3 = tk.Label(self.okno, text = denarnica.placaj_poloznico(self.namen.get(), self.znesek.get())).grid(row = 4, column = 1)
+        self.label_3 = tk.Label(self.okno, text = denarnica.placaj_poloznico(self.namen.get(), self.znesek.get()), width = 55).grid(row = 4, column = 1)
         shrani_denarnico(denarnica)
         
 class Prihodki:
@@ -126,7 +126,7 @@ class Prihodki:
         self.okno.destroy()
                        
     def shrani_prihodek(self):
-        self.label_3 = tk.Label(self.okno, text = denarnica.prihodek(self.opis.get(), self.velikost.get())).grid(row = 4, column = 2)
+        self.label_3 = tk.Label(self.okno, text = denarnica.prihodek(self.opis.get(), self.velikost.get()), width = 50).grid(row = 4, column = 1)
         shrani_denarnico(denarnica)
 
 class Poraba:
@@ -147,7 +147,7 @@ class Poraba:
         self.okno.destroy()
 
     def pokazi_porabo(self):
-        self.label_4 = tk.Label(self.okno, text = denarnica.poraba_na_izdelek(self.izdelek.get())).grid(row = 4, column = 2)
+        self.label_4 = tk.Label(self.okno, text = denarnica.poraba_na_izdelek(self.izdelek.get()), width = 40).grid(row = 4, column = 1)
         shrani_denarnico(denarnica)
 
 
@@ -169,7 +169,7 @@ class Kolicina:
         self.okno.destroy()
                            
     def pokazi_kolicino(self):
-        self.label_4 = tk.Label(self.okno, text = denarnica.kolicina_na_izdelek(self.izdelek.get())).grid(row = 4, column = 2)
+        self.label_4 = tk.Label(self.okno, text = denarnica.kolicina_na_izdelek(self.izdelek.get()), width = 40).grid(row = 4, column = 1)
         shrani_denarnico(denarnica)
 
         

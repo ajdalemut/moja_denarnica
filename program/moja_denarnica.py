@@ -19,8 +19,12 @@ class Denarnica:
             self.slovar[ime_izdelka][0] += kolicina * cena
             self.slovar[ime_izdelka][1] += kolicina
 
-    def kupi_izdelek(self, ime_izdelka, cena, kolicina = 1):
-        if kolicina * cena > self.stanje:
+    def kupi_izdelek(self, ime_izdelka, cena, kolicina):
+        if ime_izdelka == '':
+            return 'Ups, prišlo je do napake, ime izdelka mora vsebovati vsaj en znak.'
+        elif cena <= 0 or kolicina <= 0:
+            return 'Ups, prišlo je do napake, cena in količina morata biti večji od 0.'
+        elif kolicina * cena > self.stanje:
             return 'Žal nimate dovolj denarja za ta nakup!'
         else:
             self.stanje -= kolicina * cena
@@ -31,7 +35,11 @@ class Denarnica:
             return 'Izdelek ste uspešno kupili.'
 
     def placaj_poloznico(self, namen_poloznice, znesek):
-        if znesek > self.stanje:
+        if namen_poloznice == '':
+            return 'Ups, prišlo je do napake, namen položnice mora vsebovati vsaj en znak.'
+        elif znesek <= 0:
+            return 'Ups, prišlo je do napake, znesek položnice mora biti večji od 0 €.'
+        elif znesek > self.stanje:
             return 'Ups, te položnice pa ne morete plačati!'
         else:
             self.stanje -= znesek
@@ -42,6 +50,10 @@ class Denarnica:
             return 'Položnico ste uspešno plačali.'
         
     def prihodek(self, opis_prihodka, velikost_prihodka):
+        if opis_prihodka == '':
+            return 'Ups, prišlo je do napake, opis prihodka mora vsebovati vsaj en znak.'
+        elif velikost_prihodka <= 0:
+            return 'Ups, prišlo je do napake, velikost prihodka mora biti večja od 0 €.'
         self.stanje += velikost_prihodka
         x = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
         with open('denarnica.txt', 'a') as dat:
